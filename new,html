@@ -1,0 +1,65 @@
+<style>
+h1 {
+    background-color: rgb(194, 218, 194);
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+</style>
+
+
+
+
+<body> 
+
+
+    <h1 style="text-align: center"> REGISTRATION FORM </h1>		 
+        <label for="Name"><b>Name*</b></label>
+         <input type="text"  placeholder="Enter your Name"  > <br>
+
+         <label for= "E-mail"><b>E-mail*</label>	 
+            <input type="text"  placeholder="Enter your E-mail ID" > <br>
+
+            <label for="Password"><b>Password*</b></label>
+            <input type="text"  placeholder="Enter your password" > <br>
+
+            <label for= "Telephone"><b>Telephone*</b></label>	
+            <input type="text"  placeholder="Enter your telephone number" > <br>
+        
+            
+        <lable >SELECT YOUR COURSE 
+            <select type="text" value="" name="Subject"> 
+                <option>  </option>
+                <option>BTECH</option> 
+                <option>BE</option> 
+                <option>MTECH</option> 
+                <option>ME</option> 
+                <option>NULL</option> 
+            </select></lable><br><br>
+            <lable>SELECT YOUR BRANCH: 
+                <select type="text" value="" name="Subject"> 
+                    <option>  </option>
+                    <option>ECE</option> 
+                    <option>CSE</option> 
+                    <option>EEE</option> 
+                    <option>MECH</option> 
+                    <option>OTHERS</option> 
+                </select></lable><br><br>
+        <p>MENTION IF OTHERS: <textarea cols="55" name="Comment"> </textarea></p> 
+        <button type= "button">SEND</button>  
+        <button type= "button">RESET</button>  
+    </body> 
+    </html> 
+    
+    
+    
