@@ -1,0 +1,60 @@
+{
+    "data": [
+        {
+            "name": "aniritha",
+            "hr": {
+                "position": "intern",
+                "salary": "$200",
+                "start_date": "2011\/04\/25"
+            },
+            "contact": [
+                "9884465647"
+            ]
+        },
+        {
+            "name": "sneha",
+            "hr": {
+                "position": "intern",
+                "salary": "$200",
+                "start_date": "2011\/07\/25"
+            },
+            "contact": [       
+                "83467788349"
+            ]
+        },
+        {
+            "name": "uchiha",
+            "hr": {
+                "position": "intern",
+                "salary": "$200",
+                "start_date": "2009\/01\/12"
+            },
+            "contact": [
+                "4889095983"
+            ]
+        },
+        {
+            "name": "Rosina Kily",
+            "hr": {
+                "position": "Senior Javascript Developer",
+                "salary": "$433",
+                "start_date": "2012\/03\/29"
+            },
+            "contact": [
+                "622437874378"
+            ]
+        },
+        {
+            "name": "Ram",
+            "hr": {
+                "position": "Accountant",
+                "salary": "$162",
+                "start_date": "2008\/11\/28"
+            },
+            "contact": [
+              
+                "47854789433"
+            ]
+        },
+  ]
+}
