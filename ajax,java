@@ -1,0 +1,44 @@
+<html>
+<body>
+ <h2>FORM</h2>
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" placeholder="first name"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" placeholder="Second Name"><br><br>
+  <input type="submit" id= "submit" value="Submit">
+</form> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+<script>
+$(document).on("click", ":submit", function(e){
+    let fname = $("#fname").val();
+        let lname = $("#lname").val();
+        let data = {};
+        data.fname =fname;
+         data.lname =lname;
+         console.log(data);
+          console.log("Inside doAjaxCallForLibrary ");
+    console.log(fname);
+
+ try 
+   {
+	  
+	   $.ajax({
+		     type: 'POST',
+		     url: '/library-data/create',
+		     async:true,
+		     data:JSON.stringify(data),
+		     contentType: "application/json; charset=utf-8",
+		  		   
+   })
+   } 
+   catch (i) 
+   {
+       console.error(i),a(e);
+}
+});
+         
+</script>
+</body>
+</html>
