@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link href="mystyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="lb-header">
+            <a href="#login" class="active" id="login-box-link">Login</a>
+            <a href="#signup" id="signup-box-link">Sign Up</a>
+        </div>
+        <form class="email-login">
+            <div class="u-form-group">
+                <input type="email" placeholder="Email" />
+            </div>
+            <div class="u-form-group">
+                <input type="password" placeholder="Password" />
+            </div>
+            <div class="u-form-group">
+                <button>Log in</button>
+            </div>
+            <div class="u-form-group">
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+        </form>
+        <form class="email-signup">
+
+            <div class="u-form-group">
+                <label for="tooltips" class="error"></label>
+                <input type="text" class="error" id="emailnew" placeholder="Email" />
+            </div>
+            <div class="u-form-group">
+
+                <input type="password" id="password" placeholder="Password" />
+            </div>
+            <div class="u-form-group">
+
+                <input type="password" id="ConfirmPassword" placeholder="Confirm Password" />
+            </div>
+            <div class="u-form-group">
+
+                <input list="browsers" id="Roles" placeholder="Roles">
+                <datalist id="browsers">
+                    <option value="Admin">
+                    <option value="User">
+                </datalist>
+            </div>
+            <div class="u-form-group">
+                <button id="signup">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        $(".email-signup").hide();
+        $("#signup-box-link").click(function () {
+            $(".email-login").fadeOut(100);
+            $(".email-signup").delay(100).fadeIn(100);
+            $("#login-box-link").removeClass("active");
+            $("#signup-box-link").addClass("active");
+        });
+        $("#login-box-link").click(function () {
+            $(".email-login").delay(100).fadeIn(100);;
+            $(".email-signup").fadeOut(100);
+            $("#login-box-link").addClass("active");
+            $("#signup-box-link").removeClass("active");
+        });
+
+        var password = $('#password').val();
+        var Roles = $('#Roles').val();
+        $('#emailnew').on('focusout', function () {
+            if ($(".error").val() != "") {
+
+                if (validateEmail($("#emailnew").val())) {
+
+                } else {
+                    $(".error").text("Invalid Email");
+                    $(".error").fadeIn('slow');
+                }
+
+            } else {
+                $(".error").text("Email Required");
+                $(".error").fadeIn('slow');
+            }
+
+        if ($('#password').val() !== $('#ConfirmPassword').val()) {
+
+        }
+        if (Roles) {
+
+        }
+    });
+
+    function validationEmail(email) {
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        if (emailReg.test(email)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function validationpassword(password) {
+        var Regxpassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+        if (Regxpassword.test(password)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    });
+</script>
+
+</html>
