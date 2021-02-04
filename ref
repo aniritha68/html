@@ -1,0 +1,28 @@
+Project: Feedback System
+Requirement
+
+Roles:
+User
+Admin
+
+Validations: All the validations should be done in jQuery and all the jQuery script should be in separate JS files
+
+Validations for Sign In:
+Email Validation : If the email is not valid then show an error message in red color that email is not valid
+Password : If the password is wrong then show an error message in red color that password is wrong
+
+Validations for Sign Up:
+Email Validation : If the email is not valid then show an error message in red color that email is not valid
+Password : If the password is not valid then show an error message that password length should be 6, at least 1 capital letter, 1 number and 1 special character
+Role - If no role is selected then show an error message that role is mandatory field please select
+
+Functionality:
+
+User
+User can signup and provide feedback to admin
+List all the feedback provided by user in the same user dashboard
+Admin
+List all the feedback provided by all the users in admin’s dashboard
+Admin should be able to able to reply for each user’s feedback
+These replies should be listed to respective user’s feedback in the respective user dashboard
+
