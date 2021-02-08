@@ -59,33 +59,33 @@ $(document).ready(function () {
                 }
 
                 if (id == 'password') {
-                    if ($('#' + id).val() != '') {
+                   
                         if (validationPassword($('#' + id).val())) {
                             $(".error_1").fadeOut('slow');
                         } else {
                             $(".error_1").text("Invalid password");
                             $(".error_1").fadeIn('slow');
                         }
-                    } else {
-                        $(".error_1").text("Required");
-                        $(".error_1").fadeIn('slow');
-                    }
+                        if ($('#' + id).val() == '') {
+                            $(".error_1").text("Required");
+                            $(".error_1").fadeIn('slow');
+                        }
+                    
                 }
                 if (id == 'ConfirmPassword') {
+                   
                     if ($('#password').val() == $('#ConfirmPassword').val()) {
                         $('.error_2').fadeOut('fast');
-                    } else if ($('#password').val() == '') {
-                        $('.error_2').text("Required");
-                        $('.error_2').fadeIn('slow');
-                    } else {
-                        $(".error_2").text("Not same as password");
-                        $(".error_2").fadeIn('slow');
-                    }
-                }
+                    } 
+                    else { $(".error_2").text("Not same as password");
+                        $(".error_2").fadeIn('slow');}
+                        
+                    } 
+                
 
                 if (id == 'Roles') {
 
-                    if ($('#' + id).val() == '') {
+                    if ($('#' + id).val() != '') {
                         if (validationRoles($('#Roles').val())) {
                             $('.error_3').fadeOut('fast');
                         } else {
@@ -93,8 +93,8 @@ $(document).ready(function () {
                             $('.error_3').fadeIn('slow');
                         }
                     } else {
-                        $('.error_2').text("Required");
-                        $('.error_2').fadeIn('slow');
+                        $('.error_3').text("Required");
+                        $('.error_3').fadeIn('slow');
                     }
 
                 }
@@ -132,8 +132,12 @@ $(document).ready(function () {
         var email = $("#loginemail").val().trim();
         var password = $("#loginpassword").val().trim();
         var focusSet = false;
+        $(".error").fadeOut('fast').css({"display":"none"});
         if (!$('#loginemail').val()) {
+           
+           
             if ($("#loginemail").parent().next(".validation").length == 0) {
+                
                 $("#loginemail").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Please enter email address</div>");
             }
             e.preventDefault();
@@ -143,7 +147,9 @@ $(document).ready(function () {
             $("#loginemail").parent().next(".validation").remove();
         }
         if (!$('#loginpassword').val()) {
+           
             if ($("#loginpassword").parent().next(".validation").length == 0) {
+                $(".error_1").fadeOut('slow');
                 $("#loginpassword").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Please enter password</div>");
             }
             e.preventDefault();
