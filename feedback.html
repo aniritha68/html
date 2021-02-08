@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
+     <script src="fb.js"></script>></script>
+    <link href="feedbackstyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="lb-header">
+            <a href="#login" class="active" id="login-box-link">Login</a>
+            <a href="#signup" id="signup-box-link">Sign Up</a>
+        </div>
+        <form  class="email-login">
+            <div class="u-form-group">
+                <input type="text" id= "loginemail" placeholder="Email" />
+            </div>
+            <div class="u-form-group">
+                <input type="password" id = "loginpassword" placeholder="Password" />
+            </div>
+            <div class="u-form-group">
+                <button id="login">log-in</button>
+            </div>
+            <div class="u-form-group">
+                <a href="#forgot-password" class="forgot-password">Forgot password?</a>
+            </div>
+        </form>
+        <form  class="email-signup">
+            <div class="u-form-group" >
+                <div for="Tooltips" class="error" ></div>
+             <input type="text" class="pagerlink" id="emailnew" placeholder="Email" />
+            </div>
+            <div class="u-form-group">
+                <div for="Tooltips" class="error_1" ></div>
+                <input type="password" class="pagerlink" id="password" placeholder="Password" />
+            </div>
+            <div class="u-form-group">
+                <div for="Tooltips" class="error_2"  ></div>
+                <input type="password" class="pagerlink" id="ConfirmPassword" placeholder="Confirm Password" />
+            </div>
+            <div class="u-form-group">
+                <div for="Tooltips" class="error_3" ></div>
+                <input list="browsers" class="pagerlink" id="Roles" placeholder="Roles">
+                <datalist id="browsers">
+                    <option value="Admin">
+                    <option value="User">
+                </datalist>
+            </div>
+            <div class="u-form-group">
+                <button  id="signup">Sign Up</button>   
+            </div>
+        </form>
+    </div>
+</body>
+</html>
