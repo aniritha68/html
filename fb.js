@@ -13,11 +13,12 @@ $(document).ready(function () {
         $("#signup-box-link").removeClass("active");
     });
 
-    $('.pagerlink').click(function () {
+    $('.pagerlink').on('click keydown keyup ' ,function () {
         var idName = $(this).attr('id');
         elementid(idName);
+   
         function elementid(id) {
-            $('#' + id).on('Onkeyup change', function () {
+            $('#' + id).on('keyup change', function () {
                 if (id == 'emailnew') {
                     if ($('#' + id).val() != '') {
                         if (validationEmail($('#' + id).val())) {
@@ -30,13 +31,15 @@ $(document).ready(function () {
                         $(".error").text("Required");
                         $(".error").fadeIn('slow');
                     }
+            
                 }
                 if (id == 'loginemail') {
+                   
                     if ($('#' + id).val() != '') {
                         if (validationEmail($('#' + id).val())) {
                             $(".error_log").fadeOut('slow');
                         } else {
-                            $(".error_log").text('Incorrect Email');
+                            $(".error_log").text('Invalid Email');
                             $(".error_log").fadeIn('slow');
                         }
                     } else {
@@ -45,12 +48,13 @@ $(document).ready(function () {
                     }
                 }
                 if (id == 'loginpassword') {
+                  
                     if ($('#' + id).val() != '') {
                         if (validationPassword($('#' + id).val())) {
                             $(".error_log2").fadeOut('slow');
                         } else {
-                            $(".error_log2").text('Incorrect password');
-                            $(".error_log2").fadeIn('slow');
+                           
+                            $(".error_log2").fadeOut('slow');
                         }
                     } else {
                         $(".error_log2").text("Required");
@@ -59,7 +63,7 @@ $(document).ready(function () {
                 }
 
                 if (id == 'password') {
-                   
+                  
                         if (validationPassword($('#' + id).val())) {
                             $(".error_1").fadeOut('slow');
                         } else {
@@ -73,18 +77,24 @@ $(document).ready(function () {
                     
                 }
                 if (id == 'ConfirmPassword') {
-                   
+                  
+                    if ($('#' + id).val() != '') {
                     if ($('#password').val() == $('#ConfirmPassword').val()) {
                         $('.error_2').fadeOut('fast');
                     } 
                     else { $(".error_2").text("Not same as password");
-                        $(".error_2").fadeIn('slow');}
-                        
+                        $(".error_2").fadeIn('slow');
+                    }  
                     } 
+                 else{
+                        $(".error_2").text("Required");
+                        $(".error_2").fadeIn('slow');
+                    }
+                }
                 
 
                 if (id == 'Roles') {
-
+                  
                     if ($('#' + id).val() != '') {
                         if (validationRoles($('#Roles').val())) {
                             $('.error_3').fadeOut('fast');
@@ -103,6 +113,7 @@ $(document).ready(function () {
             function validationEmail(emailval) {
 
                 var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                
                 if (emailReg.test(emailval)) {
                     return true;
                 } else {
@@ -135,27 +146,30 @@ $(document).ready(function () {
     
         if (!$('#loginemail').val()) { 
             if ($("#loginemail").parent().next(".validation").length == 0) {
-                $(".error_log").fadeOut('fast').css({"display":"none"});
-                $("#loginemail").parent().after("<div class='validation' style='color:red;margin-bottom: 10px;'>Please enter email address</div>");
+                $(".error_log").fadeOut('fast');
+                $(".error_log").text("Required");
+                $(".error_log").fadeIn('fast');
             }
             e.preventDefault();
             $('#loginemail').focus();
             focusSet = true;
         } else {
-            $("#loginemail").parent().next(".validation").remove();
+            $(".error_log").fadeOut('fast');;
         }
         if (!$('#loginpassword').val()) {
            
             if ($("#loginpassword").parent().next(".validation").length == 0) {
                 $(".error_log2").fadeOut('fast').css({"display":"none"});
-                $("#loginpassword").parent().after("<div class='validation' style='color:red;margin-bottom: 10px;'>Please enter password</div>");
+                $(".error_log2").fadeOut('fast');
+                $(".error_log2").text("Required");
+                $(".error_log2").fadeIn('fast');
             }
             e.preventDefault();
             if (!focusSet) {
                 $("#loginpassword").focus();
             }
         } else {
-            $("#loginpassword").parent().next(".validation").remove();
+            $(".error_log").fadeOut('fast');
         }
         if (email != "" && password != "") {
             $.ajax({
@@ -186,49 +200,53 @@ $(document).ready(function () {
         if (!$('#emailnew').val()) {
             if ($("#emailnew").parent().next(".validation").length == 0) {
                 $(".error").fadeOut('slow');
-                $("#emailnew").parent().after("<div class='validation' style='color:red;'>Please enter email address</div>");
+                $(".error").text("Required");
+                $(".error").fadeIn('fast');
             }
             e.preventDefault();
             $('#emailnew').focus();
             focusSet = true;
         } else {
-            $("#emailnew").parent().next(".validation").remove();
+            $(".error").fadeOut('slow');
         }
         if (!$('#password').val()) {
             if ($("#password").parent().next(".validation").length == 0) {
                 $(".error_1").fadeOut('slow');
-                $("#password").parent().after("<div class='validation' style='color:red;margin-top: 1px;'>Please enter password</div>");
+                $(".error_1").text("Required");
+                $(".error_1").fadeIn('fast');
             }
             e.preventDefault();
             if (!focusSet) {
                 $("#password").focus();
             }
         } else {
-            $("#password").parent().next(".validation").remove();
+            $(".error_1").fadeOut('slow');
         }
         if (!$('#ConfirmPassword').val()) {
             if ($("#ConfirmPassword").parent().next(".validation").length == 0) {
                 $(".error_2").fadeOut('slow');
-                $("#ConfirmPassword").parent().after("<div class='validation' style='color:red;margin-bottom: 0px;'>Required</div>");
+                $(".error_2").text("Required");
+                $(".error_2").fadeIn('fast');
             }
             e.preventDefault();
             if (!focusSet) {
                 $("#ConfirmPassword").focus();
             }
         } else {
-            $("#ConfirmPassword").parent().next(".validation").remove();
+            $(".error_2").fadeOut('slow');
         }
         if (!$('#Roles').val()) {
             if ($("#Roles").parent().next(".validation").length == 0) {
-                $(".error_2").fadeOut('slow');
-                $("#Roles").parent().after("<div class='validation' style='color:red;margin-bottom: 0px;'>Required</div>");
+                $(".error_3").fadeOut('slow');
+                $(".error_3").text("Required");
+                $(".error_3").fadeIn('fast');
             }
             e.preventDefault();
             if (!focusSet) {
                 $("#Roles").focus();
             }
         } else {
-            $("#Roles").parent().next(".validation").remove();
+            $(".error_3").fadeOut('slow');
         }
         var signup_data = {}
         signup_data.email = email;
