@@ -17,7 +17,7 @@ $(document).ready(function () {
         var idName = $(this).attr('id');
         elementid(idName);
         function elementid(id) {
-            $('#' + id).on('keypress change', function () {
+            $('#' + id).on('Onkeyup change', function () {
                 if (id == 'emailnew') {
                     if ($('#' + id).val() != '') {
                         if (validationEmail($('#' + id).val())) {
@@ -132,13 +132,11 @@ $(document).ready(function () {
         var email = $("#loginemail").val().trim();
         var password = $("#loginpassword").val().trim();
         var focusSet = false;
-        $(".error").fadeOut('fast').css({"display":"none"});
-        if (!$('#loginemail').val()) {
-           
-           
+    
+        if (!$('#loginemail').val()) { 
             if ($("#loginemail").parent().next(".validation").length == 0) {
-                
-                $("#loginemail").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Please enter email address</div>");
+                $(".error_log").fadeOut('fast').css({"display":"none"});
+                $("#loginemail").parent().after("<div class='validation' style='color:red;margin-bottom: 10px;'>Please enter email address</div>");
             }
             e.preventDefault();
             $('#loginemail').focus();
@@ -149,8 +147,8 @@ $(document).ready(function () {
         if (!$('#loginpassword').val()) {
            
             if ($("#loginpassword").parent().next(".validation").length == 0) {
-                $(".error_1").fadeOut('slow');
-                $("#loginpassword").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Please enter password</div>");
+                $(".error_log2").fadeOut('fast').css({"display":"none"});
+                $("#loginpassword").parent().after("<div class='validation' style='color:red;margin-bottom: 10px;'>Please enter password</div>");
             }
             e.preventDefault();
             if (!focusSet) {
@@ -184,9 +182,11 @@ $(document).ready(function () {
         var conformpassword = $("#ConfirmPassword").val().trim();
         var Roles = $("#Roles").val().trim();
         var focusSet = false;
+        $(".login_box").css({"float":"left","height":"auto","width":"100%"});
         if (!$('#emailnew').val()) {
             if ($("#emailnew").parent().next(".validation").length == 0) {
-                $("#emailnew").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Please enter email address</div>");
+                $(".error").fadeOut('slow');
+                $("#emailnew").parent().after("<div class='validation' style='color:red;'>Please enter email address</div>");
             }
             e.preventDefault();
             $('#emailnew').focus();
@@ -196,7 +196,8 @@ $(document).ready(function () {
         }
         if (!$('#password').val()) {
             if ($("#password").parent().next(".validation").length == 0) {
-                $("#password").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Please enter password</div>");
+                $(".error_1").fadeOut('slow');
+                $("#password").parent().after("<div class='validation' style='color:red;margin-top: 1px;'>Please enter password</div>");
             }
             e.preventDefault();
             if (!focusSet) {
@@ -207,7 +208,8 @@ $(document).ready(function () {
         }
         if (!$('#ConfirmPassword').val()) {
             if ($("#ConfirmPassword").parent().next(".validation").length == 0) {
-                $("#ConfirmPassword").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Required</div>");
+                $(".error_2").fadeOut('slow');
+                $("#ConfirmPassword").parent().after("<div class='validation' style='color:red;margin-bottom: 0px;'>Required</div>");
             }
             e.preventDefault();
             if (!focusSet) {
@@ -218,7 +220,8 @@ $(document).ready(function () {
         }
         if (!$('#Roles').val()) {
             if ($("#Roles").parent().next(".validation").length == 0) {
-                $("#Roles").parent().after("<div class='validation' style='color:red;margin-bottom: 20px;'>Required</div>");
+                $(".error_2").fadeOut('slow');
+                $("#Roles").parent().after("<div class='validation' style='color:red;margin-bottom: 0px;'>Required</div>");
             }
             e.preventDefault();
             if (!focusSet) {
