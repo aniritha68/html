@@ -26,3 +26,22 @@ List all the feedback provided by all the users in admin’s dashboard
 Admin should be able to able to reply for each user’s feedback
 These replies should be listed to respective user’s feedback in the respective user dashboard
 
+Sign Up:
+On successful completion of sign up, redirect the user to dashboard page (maintain session) where the user can see a welcome message with his name and on top right corner provide an menu which should contain logout and profile
+On click of logout button, user should be logged out
+On click of profile show a popup with user details
+Name
+Email (Readonly)
+Provide option to update name
+On click of update validate and save the details
+
+SignIn/Login: 
+On successful login, redirect the user to dashboard page (maintain session) where the user can see a welcome message with his name and on top right corner provide an menu which should contain logout and profile
+On click of logout button, user should be logged out
+On click of profile show a popup with user details
+Name
+Email (Readonly)
+Provide option to update name
+On click of update validate and save the details
+
+
